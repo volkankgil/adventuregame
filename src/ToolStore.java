@@ -63,7 +63,7 @@ public class ToolStore extends normallocation {
             }
         }
     }
-///vevvvvvvvvvvvvvvvvv
+
     public void printArmour(){
         System.out.println("Zýrhlar");
     }
