@@ -24,6 +24,7 @@ public class ToolStore extends normallocation {
                 break;
             case 2:
                 printArmour();
+                buyArmour();
                 break;
             case 3:
                 System.out.println("Çýkýþ yaptýnýz.");
@@ -65,6 +66,14 @@ public class ToolStore extends normallocation {
     }
 
     public void printArmour(){
-        System.out.println("Zýrhlar");
+        for (Armour a :Armour.printnames())
+            System.out.println(" Zýrh tipi : " + a.getArmourNAme()+"   Zýrh Kodu : " + a.getId()+ "   Blokaj Deðeri : " + a.getBlocked()+ "  Satýnalýnmasý için parasý: " + a.getMoney());
+        }
+
+
+        public void buyArmour(){
+            System.out.println("Bir Zýrh Seçiniz:");
+            int selectarmour = input.nextInt();
+            System.out.println(this.getPlayer().getInventory().getArmours().getArmourNAme());
+        }
     }
-}

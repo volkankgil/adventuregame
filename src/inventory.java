@@ -1,9 +1,11 @@
 public class inventory {
 
    private silahlarsýnýfý silahlarsýnýfý;
+   private Armour armours;
 
    public inventory(){
       this.silahlarsýnýfý= new silahlarsýnýfý("Yumruk",0,0,0);
+      this.armours=new Armour("Zýrh Yok",0,0,0);
    }
 
    public silahlarsýnýfý getSilahlarsýnýfý() {
@@ -12,6 +14,14 @@ public class inventory {
 
    public void setSilahlarsýnýfý(silahlarsýnýfý silahlarsýnýfý){
       this.silahlarsýnýfý = silahlarsýnýfý;
+   }
+
+   public Armour getArmours() {
+      return armours;
+   }
+
+   public void setArmours(Armour armours) {
+      this.armours = armours;
    }
 }
 
