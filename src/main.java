@@ -3,7 +3,5 @@ public class main {
 
         Game game = new Game();
         game.start();
-
-
     }
 }

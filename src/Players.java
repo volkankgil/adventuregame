@@ -53,6 +53,8 @@ public class Players {
 
     public void printPlayerinfo(){
         System.out.println("Karakter: " +this.getCharName() +
+                "\tZýrhýnýz :" + this.getInventory().getArmours().getArmourNAme()+
+                "\tBloklama :" + this.getInventory().getArmours().getArmoursblocked()+
                 "\tSilahýnýz: " + this.getInventory().getSilahlarsýnýfý().getWeaponName()+
                 "\tHasar: " +this.getDamage()+
                 "\tSaðlýk: "+getHealty()+

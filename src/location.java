@@ -26,8 +26,5 @@ public abstract class location {
     public void setLocationname(String locationname) {
         this.locationname = locationname;
     }
-
-
-
     public abstract boolean onlocation(); // location sýnýfýndan kalýtým alan bütün alt sýnýflarýn bu metodu yazmasý için abstract yazdýk.
 }

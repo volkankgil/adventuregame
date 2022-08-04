@@ -4,8 +4,8 @@ public class inventory {
    private Armour armours;
 
    public inventory(){
-      this.silahlarsýnýfý= new silahlarsýnýfý("Yumruk",0,0,0);
-      this.armours=new Armour("Zýrh Yok",0,0,0);
+      this.silahlarsýnýfý= new silahlarsýnýfý("Yumruk",-1,0,0);
+      this.armours=new Armour("Zýrh Yok",-1,0,0);
    }
 
    public silahlarsýnýfý getSilahlarsýnýfý() {
