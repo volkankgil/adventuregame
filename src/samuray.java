@@ -1,6 +1,6 @@
-public class samuray extends karakterler {
+public class samuray extends character {
 
     public samuray() {
-        super(1, "Samuray", 25, 15, 15);
+        super(1, "Samuray", 5, 21, 15);
     }
 }

@@ -1,15 +1,24 @@
+import java.util.Random;
+
 public class monster {
 
     private String monsterName;
     private int monsterid;
     private int monsterdamage;
     private int monsterHealth;
+    private int award;
+    private int orjinalHealth;
 
-    monster(String monsterName,int monsterid,int monsterdamage,int monsterHealth){
+
+
+
+    monster(String monsterName, int monsterid, int monsterdamage,int monsterHealth, int award){
         this.monsterName=monsterName;
         this.monsterid=monsterid;
         this.monsterdamage=monsterdamage;
         this.monsterHealth=monsterHealth;
+        this.award=award;
+        this.orjinalHealth=monsterHealth;
     }
 
     public String getMonsterName(){
@@ -41,6 +50,24 @@ public class monster {
     }
 
     public void setMonsterHealth(int monsterHealth) {
+        if(monsterHealth<0){
+            monsterHealth=0;
+        }
         this.monsterHealth = monsterHealth;
+    }
+
+    public int getAward() {
+        return award;
+    }
+
+    public void setAward(int award) {
+        this.award = award;
+    }
+
+    public int getOrjinalHealth(){
+        return orjinalHealth;
+    }
+    public void setOrjinalHealth(int orjinalHealth){
+        this.orjinalHealth=orjinalHealth;
     }
 }

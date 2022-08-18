@@ -1,28 +1,28 @@
 public class Armour {
 
+    private int armourid;
     private String armourNAme;
-    private int id;
     private int armoursblocked;
     private int armoursmoney;
 
-    public Armour(String armourNAme, int id, int armoursblocked, int money){
+    public Armour(int armourid, String armourNAme,  int armoursblocked, int money){
+        this.armourid = armourid;
         this.armourNAme=armourNAme;
-        this.id=id;
         this.armoursblocked = armoursblocked;
         this.armoursmoney =money;
     }
 
-    public static Armour[] armoursprintnames(){
+    public static Armour[] armours(){
         Armour armoursname[]=new Armour[3];
-        armoursname[0]=new Armour("Hafif",1,1,15);
-        armoursname[1]=new Armour("Orta",2,3,25);
-        armoursname[2]=new Armour("Aðýr",3,5,40);
+        armoursname[0]=new Armour(1, "Hafif", 1,15);
+        armoursname[1]=new Armour(2, "Orta", 3,25);
+        armoursname[2]=new Armour(3, "Aðýr", 5,40);
         return armoursname;
     }
 
     public static Armour getArmoursid(int id) {
-        for (Armour a : Armour.armoursprintnames()) {
-            if (a.getId() == id) {
+        for (Armour a : Armour.armours()) {
+            if (a.getArmourid() == id) {
                 return a;
             }
         }
@@ -37,12 +37,12 @@ public class Armour {
         this.armourNAme=armourNAme;
     }
 
-    public int getId() {
-        return id;
+    public int getArmourid() {
+        return armourid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setArmourid(int armourid) {
+        this.armourid = armourid;
     }
 
     public int getArmoursblocked(){

@@ -8,6 +8,7 @@ public class SafeHouse extends normallocation{
     public boolean onlocation() {
         System.out.println("Güvenli Evdesiniz.");
         System.out.println("Canýnýz Yenilendi.");
+        this.getPlayer().setHealty(this.getPlayer().getOrjinalHealth());
         return true;
     }
 }

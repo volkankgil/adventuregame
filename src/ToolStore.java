@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class ToolStore extends normallocation {
 
     ToolStore(Players player) {
@@ -43,8 +41,8 @@ public class ToolStore extends normallocation {
 
     public void printweapon() {
         System.out.println("--------Silahlar----------");
-        for (silahlarsýnýfý w : silahlarsýnýfý.weapons()) {
-            System.out.println(w.getID() + "-" + " Silah Ýsmi: " + w.getWeaponName() + " Para : " + w.getMoney() + " Hasar:" + w.getDamage());
+        for (weaponClass w : weaponClass.weapons()) {
+            System.out.println(w.getWeaponID() + "-" + " Silah Ýsmi: " + w.getWeaponName() + " Para : " + w.getWeaponMoneyforBuying() + " Hasar:" + w.getWeapondamage());
         }
         System.out.println("0- Çýkýþ Yap.");
     }
@@ -53,34 +51,34 @@ public class ToolStore extends normallocation {
 
         System.out.println("Bir Silah Seçiniz:");
         int selectweapon = input.nextInt();
-        while (selectweapon < 0 || silahlarsýnýfý.weapons().length > 3) {
+        while (selectweapon < 0 || weaponClass.weapons().length > 3) {
             System.out.print("Hatalý seçim Yaptýnýz. Tekrar Deneyiniz: ");
             selectweapon = input.nextInt();
         }
 
         if (selectweapon != 0) {
-            silahlarsýnýfý selectedWeapon = silahlarsýnýfý.getweaponsýd(selectweapon);
+            weaponClass selectedWeapon = weaponClass.callweaponsýd(selectweapon);
 
             if (selectedWeapon != null) {
-                if (selectedWeapon.getMoney() > this.getPlayer().getMoney()) {
+                if (selectedWeapon.getWeaponMoneyforBuying() > this.getPlayer().getMoney()) {
                     System.out.println("Yeterli paranýz yok");
                 } else {
                     //Satýnalmanýn gerçekleþtiði alan.
                     System.out.println(selectedWeapon.getWeaponName() + " silahýný satýn aldýnýz.");
-                    int balance = this.getPlayer().getMoney() - selectedWeapon.getMoney();
+                    int balance = this.getPlayer().getMoney() - selectedWeapon.getWeaponMoneyforBuying();
                     this.getPlayer().setMoney(balance);
                     System.out.println("Kalan Paranýz : " + this.getPlayer().getMoney());
-                    System.out.println("Önceki silahýnýz :" + this.getPlayer().getInventory().getSilahlarsýnýfý().getWeaponName());
-                    this.getPlayer().getInventory().setSilahlarsýnýfý(selectedWeapon);
-                    System.out.println("Güncel silahýnýz :" + this.getPlayer().getInventory().getSilahlarsýnýfý().getWeaponName());
+                    System.out.println("Önceki silahýnýz :" + this.getPlayer().getInventory().getWeaponClasses().getWeaponName());
+                    this.getPlayer().getInventory().setWeaponClasses(selectedWeapon);
+                    System.out.println("Güncel silahýnýz :" + this.getPlayer().getInventory().getWeaponClasses().getWeaponName());
                 }
             }
         }
     }
 
     public void printArmour() {
-        for (Armour a : Armour.armoursprintnames()) {
-            System.out.println(" Zýrh tipi : " + a.getArmourNAme() + "   Zýrh Kodu : " + a.getId() + "   Blokaj Deðeri : " + a.getArmoursblocked() + "  Satýnalýnmasý için parasý: " + a.getArmoursmoney());
+        for (Armour a : Armour.armours()) {
+            System.out.println("   Zýrh Kodu : " + a.getArmourid() + "  Zýrh tipi : " + a.getArmourNAme() +  "   Blokaj Deðeri : " + a.getArmoursblocked() + "  Satýnalýnmasý için parasý: " + a.getArmoursmoney());
         }
         System.out.println("0- Çýkýþ Yap.");
     }
@@ -88,7 +86,7 @@ public class ToolStore extends normallocation {
     public void buyArmour() {
         System.out.println("Bir Zýrh Seçiniz:");
         int selectarmour = input.nextInt();
-        while (selectarmour < 0 || selectarmour > Armour.armoursprintnames().length) {
+        while (selectarmour < 0 || selectarmour > Armour.armours().length) {
             System.out.println("Hatalý seçim yaptýnýz. Tekrar deneyiniz.");
             selectarmour = input.nextInt();
         }
